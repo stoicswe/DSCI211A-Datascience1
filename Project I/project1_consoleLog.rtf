@@ -1,0 +1,841 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 R version 3.4.1 (2017-06-30) -- "Single Candle"\
+Copyright (C) 2017 The R Foundation for Statistical Computing\
+Platform: x86_64-apple-darwin15.6.0 (64-bit)\
+\
+R is free software and comes with ABSOLUTELY NO WARRANTY.\
+You are welcome to redistribute it under certain conditions.\
+Type 'license()' or 'licence()' for distribution details.\
+\
+  Natural language support but running in an English locale\
+\
+R is a collaborative project with many contributors.\
+Type 'contributors()' for more information and\
+'citation()' on how to cite R or R packages in publications.\
+\
+Type 'demo()' for some demos, 'help()' for on-line help, or\
+'help.start()' for an HTML browser interface to help.\
+Type 'q()' to quit R.\
+\
+> 1+2\
+[1] 3\
+> 1 / (2+17) - 1.5 +sprt(2)\
+Error in sprt(2) : could not find function "sprt"\
+> 1 / (2+17) - 1.5 +sqrt(2)\
+[1] -0.03315486\
+> x <- 1+2\
+> x\
+[1] 3\
+> x/2\
+[1] 1.5\
+> 2\
+[1] 2\
+> y <- x/2\
+> y\
+[1] 1.5\
+> class(x=y)\
+[1] "numeric"\
+> class(y)\
+[1] "numeric"\
+> class(x=class\
++ \
++ )\
+[1] "function"\
+> ls()\
+[1] "x" "y"\
+> ls(envir=baseenv())\
+   [1] "-"                                  "-.Date"                            \
+   [3] "-.POSIXt"                           ":"                                 \
+   [5] "::"                                 ":::"                               \
+   [7] "!"                                  "!.hexmode"                         \
+   [9] "!.octmode"                          "!="                                \
+  [11] "("                                  "["                                 \
+  [13] "[.AsIs"                             "[.data.frame"                      \
+  [15] "[.Date"                             "[.difftime"                        \
+  [17] "[.Dlist"                            "[.factor"                          \
+  [19] "[.hexmode"                          "[.listof"                          \
+  [21] "[.noquote"                          "[.numeric_version"                 \
+  [23] "[.octmode"                          "[.POSIXct"                         \
+  [25] "[.POSIXlt"                          "[.simple.list"                     \
+  [27] "[.table"                            "[.warnings"                        \
+  [29] "[["                                 "[[.data.frame"                     \
+  [31] "[[.Date"                            "[[.factor"                         \
+  [33] "[[.numeric_version"                 "[[.POSIXct"                        \
+  [35] "[[<-"                               "[[<-.data.frame"                   \
+  [37] "[[<-.factor"                        "[[<-.numeric_version"              \
+  [39] "[<-"                                "[<-.data.frame"                    \
+  [41] "[<-.Date"                           "[<-.factor"                        \
+  [43] "[<-.numeric_version"                "[<-.POSIXct"                       \
+  [45] "[<-.POSIXlt"                        "\{"                                 \
+  [47] "@"                                  "@<-"                               \
+  [49] "*"                                  "*.difftime"                        \
+  [51] "/"                                  "/.difftime"                        \
+  [53] "&"                                  "&.hexmode"                         \
+  [55] "&.octmode"                          "&&"                                \
+  [57] "%*%"                                "%/%"                               \
+  [59] "%%"                                 "%in%"                              \
+  [61] "%o%"                                "%x%"                               \
+  [63] "^"                                  "+"                                 \
+  [65] "+.Date"                             "+.POSIXt"                          \
+  [67] "<"                                  "<-"                                \
+  [69] "<<-"                                "<="                                \
+  [71] "="                                  "=="                                \
+  [73] ">"                                  ">="                                \
+  [75] "|"                                  "|.hexmode"                         \
+  [77] "|.octmode"                          "||"                                \
+  [79] "~"                                  "$"                                 \
+  [81] "$.data.frame"                       "$.DLLInfo"                         \
+  [83] "$.package_version"                  "$<-"                               \
+  [85] "$<-.data.frame"                     "abbreviate"                        \
+  [87] "abs"                                "acos"                              \
+  [89] "acosh"                              "addNA"                             \
+  [91] "addTaskCallback"                    "agrep"                             \
+  [93] "agrepl"                             "alist"                             \
+  [95] "all"                                "all.equal"                         \
+  [97] "all.equal.character"                "all.equal.default"                 \
+  [99] "all.equal.environment"              "all.equal.envRefClass"             \
+ [101] "all.equal.factor"                   "all.equal.formula"                 \
+ [103] "all.equal.language"                 "all.equal.list"                    \
+ [105] "all.equal.numeric"                  "all.equal.POSIXt"                  \
+ [107] "all.equal.raw"                      "all.names"                         \
+ [109] "all.vars"                           "any"                               \
+ [111] "anyDuplicated"                      "anyDuplicated.array"               \
+ [113] "anyDuplicated.data.frame"           "anyDuplicated.default"             \
+ [115] "anyDuplicated.matrix"               "anyNA"                             \
+ [117] "anyNA.numeric_version"              "anyNA.POSIXlt"                     \
+ [119] "aperm"                              "aperm.default"                     \
+ [121] "aperm.table"                        "append"                            \
+ [123] "apply"                              "Arg"                               \
+ [125] "args"                               "array"                             \
+ [127] "arrayInd"                           "as.array"                          \
+ [129] "as.array.default"                   "as.call"                           \
+ [131] "as.character"                       "as.character.condition"            \
+ [133] "as.character.Date"                  "as.character.default"              \
+ [135] "as.character.error"                 "as.character.factor"               \
+ [137] "as.character.hexmode"               "as.character.numeric_version"      \
+ [139] "as.character.octmode"               "as.character.POSIXt"               \
+ [141] "as.character.srcref"                "as.complex"                        \
+ [143] "as.data.frame"                      "as.data.frame.array"               \
+ [145] "as.data.frame.AsIs"                 "as.data.frame.character"           \
+ [147] "as.data.frame.complex"              "as.data.frame.data.frame"          \
+ [149] "as.data.frame.Date"                 "as.data.frame.default"             \
+ [151] "as.data.frame.difftime"             "as.data.frame.factor"              \
+ [153] "as.data.frame.integer"              "as.data.frame.list"                \
+ [155] "as.data.frame.logical"              "as.data.frame.matrix"              \
+ [157] "as.data.frame.model.matrix"         "as.data.frame.noquote"             \
+ [159] "as.data.frame.numeric"              "as.data.frame.numeric_version"     \
+ [161] "as.data.frame.ordered"              "as.data.frame.POSIXct"             \
+ [163] "as.data.frame.POSIXlt"              "as.data.frame.raw"                 \
+ [165] "as.data.frame.table"                "as.data.frame.ts"                  \
+ [167] "as.data.frame.vector"               "as.Date"                           \
+ [169] "as.Date.character"                  "as.Date.date"                      \
+ [171] "as.Date.dates"                      "as.Date.default"                   \
+ [173] "as.Date.factor"                     "as.Date.numeric"                   \
+ [175] "as.Date.POSIXct"                    "as.Date.POSIXlt"                   \
+ [177] "as.difftime"                        "as.double"                         \
+ [179] "as.double.difftime"                 "as.double.POSIXlt"                 \
+ [181] "as.environment"                     "as.expression"                     \
+ [183] "as.expression.default"              "as.factor"                         \
+ [185] "as.function"                        "as.function.default"               \
+ [187] "as.hexmode"                         "as.integer"                        \
+ [189] "as.list"                            "as.list.data.frame"                \
+ [191] "as.list.Date"                       "as.list.default"                   \
+ [193] "as.list.environment"                "as.list.factor"                    \
+ [195] "as.list.function"                   "as.list.numeric_version"           \
+ [197] "as.list.POSIXct"                    "as.logical"                        \
+ [199] "as.logical.factor"                  "as.matrix"                         \
+ [201] "as.matrix.data.frame"               "as.matrix.default"                 \
+ [203] "as.matrix.noquote"                  "as.matrix.POSIXlt"                 \
+ [205] "as.name"                            "as.null"                           \
+ [207] "as.null.default"                    "as.numeric"                        \
+ [209] "as.numeric_version"                 "as.octmode"                        \
+ [211] "as.ordered"                         "as.package_version"                \
+ [213] "as.pairlist"                        "as.POSIXct"                        \
+ [215] "as.POSIXct.date"                    "as.POSIXct.Date"                   \
+ [217] "as.POSIXct.dates"                   "as.POSIXct.default"                \
+ [219] "as.POSIXct.numeric"                 "as.POSIXct.POSIXlt"                \
+ [221] "as.POSIXlt"                         "as.POSIXlt.character"              \
+ [223] "as.POSIXlt.date"                    "as.POSIXlt.Date"                   \
+ [225] "as.POSIXlt.dates"                   "as.POSIXlt.default"                \
+ [227] "as.POSIXlt.factor"                  "as.POSIXlt.numeric"                \
+ [229] "as.POSIXlt.POSIXct"                 "as.qr"                             \
+ [231] "as.raw"                             "as.single"                         \
+ [233] "as.single.default"                  "as.symbol"                         \
+ [235] "as.table"                           "as.table.default"                  \
+ [237] "as.vector"                          "as.vector.factor"                  \
+ [239] "asin"                               "asinh"                             \
+ [241] "asNamespace"                        "asS3"                              \
+ [243] "asS4"                               "assign"                            \
+ [245] "atan"                               "atan2"                             \
+ [247] "atanh"                              "attach"                            \
+ [249] "attachNamespace"                    "attr"                              \
+ [251] "attr.all.equal"                     "attr<-"                            \
+ [253] "attributes"                         "attributes<-"                      \
+ [255] "autoload"                           "autoloader"                        \
+ [257] "backsolve"                          "baseenv"                           \
+ [259] "basename"                           "besselI"                           \
+ [261] "besselJ"                            "besselK"                           \
+ [263] "besselY"                            "beta"                              \
+ [265] "bindingIsActive"                    "bindingIsLocked"                   \
+ [267] "bindtextdomain"                     "bitwAnd"                           \
+ [269] "bitwNot"                            "bitwOr"                            \
+ [271] "bitwShiftL"                         "bitwShiftR"                        \
+ [273] "bitwXor"                            "body"                              \
+ [275] "body<-"                             "bquote"                            \
+ [277] "break"                              "browser"                           \
+ [279] "browserCondition"                   "browserSetDebug"                   \
+ [281] "browserText"                        "builtins"                          \
+ [283] "by"                                 "by.data.frame"                     \
+ [285] "by.default"                         "bzfile"                            \
+ [287] "c"                                  "c.Date"                            \
+ [289] "c.difftime"                         "c.noquote"                         \
+ [291] "c.numeric_version"                  "c.POSIXct"                         \
+ [293] "c.POSIXlt"                          "c.warnings"                        \
+ [295] "call"                               "callCC"                            \
+ [297] "capabilities"                       "casefold"                          \
+ [299] "cat"                                "cbind"                             \
+ [301] "cbind.data.frame"                   "ceiling"                           \
+ [303] "char.expand"                        "character"                         \
+ [305] "charmatch"                          "charToRaw"                         \
+ [307] "chartr"                             "check_tzones"                      \
+ [309] "chkDots"                            "chol"                              \
+ [311] "chol.default"                       "chol2inv"                          \
+ [313] "choose"                             "class"                             \
+ [315] "class<-"                            "clearPushBack"                     \
+ [317] "close"                              "close.connection"                  \
+ [319] "close.srcfile"                      "close.srcfilealias"                \
+ [321] "closeAllConnections"                "col"                               \
+ [323] "colMeans"                           "colnames"                          \
+ [325] "colnames<-"                         "colSums"                           \
+ [327] "commandArgs"                        "comment"                           \
+ [329] "comment<-"                          "complex"                           \
+ [331] "computeRestarts"                    "conditionCall"                     \
+ [333] "conditionCall.condition"            "conditionMessage"                  \
+ [335] "conditionMessage.condition"         "conflicts"                         \
+ [337] "Conj"                               "contributors"                      \
+ [339] "cos"                                "cosh"                              \
+ [341] "cospi"                              "crossprod"                         \
+ [343] "Cstack_info"                        "cummax"                            \
+ [345] "cummin"                             "cumprod"                           \
+ [347] "cumsum"                             "curlGetHeaders"                    \
+ [349] "cut"                                "cut.Date"                          \
+ [351] "cut.default"                        "cut.POSIXt"                        \
+ [353] "data.class"                         "data.frame"                        \
+ [355] "data.matrix"                        "date"                              \
+ [357] "debug"                              "debuggingState"                    \
+ [359] "debugonce"                          "default.stringsAsFactors"          \
+ [361] "delayedAssign"                      "deparse"                           \
+ [363] "det"                                "detach"                            \
+ [365] "determinant"                        "determinant.matrix"                \
+ [367] "dget"                               "diag"                              \
+ [369] "diag<-"                             "diff"                              \
+ [371] "diff.Date"                          "diff.default"                      \
+ [373] "diff.difftime"                      "diff.POSIXt"                       \
+ [375] "difftime"                           "digamma"                           \
+ [377] "dim"                                "dim.data.frame"                    \
+ [379] "dim<-"                              "dimnames"                          \
+ [381] "dimnames.data.frame"                "dimnames<-"                        \
+ [383] "dimnames<-.data.frame"              "dir"                               \
+ [385] "dir.create"                         "dir.exists"                        \
+ [387] "dirname"                            "do.call"                           \
+ [389] "dontCheck"                          "double"                            \
+ [391] "dput"                               "dQuote"                            \
+ [393] "drop"                               "droplevels"                        \
+ [395] "droplevels.data.frame"              "droplevels.factor"                 \
+ [397] "dump"                               "duplicated"                        \
+ [399] "duplicated.array"                   "duplicated.data.frame"             \
+ [401] "duplicated.default"                 "duplicated.matrix"                 \
+ [403] "duplicated.numeric_version"         "duplicated.POSIXlt"                \
+ [405] "duplicated.warnings"                "dyn.load"                          \
+ [407] "dyn.unload"                         "dynGet"                            \
+ [409] "eapply"                             "eigen"                             \
+ [411] "emptyenv"                           "enc2native"                        \
+ [413] "enc2utf8"                           "encodeString"                      \
+ [415] "Encoding"                           "Encoding<-"                        \
+ [417] "endsWith"                           "enquote"                           \
+ [419] "env.profile"                        "environment"                       \
+ [421] "environment<-"                      "environmentIsLocked"               \
+ [423] "environmentName"                    "eval"                              \
+ [425] "eval.parent"                        "evalq"                             \
+ [427] "exists"                             "exp"                               \
+ [429] "expand.grid"                        "expm1"                             \
+ [431] "expression"                         "extSoftVersion"                    \
+ [433] "F"                                  "factor"                            \
+ [435] "factorial"                          "fifo"                              \
+ [437] "file"                               "file.access"                       \
+ [439] "file.append"                        "file.choose"                       \
+ [441] "file.copy"                          "file.create"                       \
+ [443] "file.exists"                        "file.info"                         \
+ [445] "file.link"                          "file.mode"                         \
+ [447] "file.mtime"                         "file.path"                         \
+ [449] "file.remove"                        "file.rename"                       \
+ [451] "file.show"                          "file.size"                         \
+ [453] "file.symlink"                       "Filter"                            \
+ [455] "Find"                               "find.package"                      \
+ [457] "findInterval"                       "findPackageEnv"                    \
+ [459] "findRestart"                        "floor"                             \
+ [461] "flush"                              "flush.connection"                  \
+ [463] "for"                                "force"                             \
+ [465] "forceAndCall"                       "formals"                           \
+ [467] "formals<-"                          "format"                            \
+ [469] "format.AsIs"                        "format.data.frame"                 \
+ [471] "format.Date"                        "format.default"                    \
+ [473] "format.difftime"                    "format.factor"                     \
+ [475] "format.hexmode"                     "format.info"                       \
+ [477] "format.libraryIQR"                  "format.numeric_version"            \
+ [479] "format.octmode"                     "format.packageInfo"                \
+ [481] "format.POSIXct"                     "format.POSIXlt"                    \
+ [483] "format.pval"                        "format.summaryDefault"             \
+ [485] "formatC"                            "formatDL"                          \
+ [487] "forwardsolve"                       "function"                          \
+ [489] "gamma"                              "gc"                                \
+ [491] "gc.time"                            "gcinfo"                            \
+ [493] "gctorture"                          "gctorture2"                        \
+ [495] "get"                                "get0"                              \
+ [497] "getAllConnections"                  "getCallingDLL"                     \
+ [499] "getCallingDLLe"                     "getConnection"                     \
+ [501] "getDLLRegisteredRoutines"           "getDLLRegisteredRoutines.character"\
+ [503] "getDLLRegisteredRoutines.DLLInfo"   "getElement"                        \
+ [505] "geterrmessage"                      "getExportedValue"                  \
+ [507] "getHook"                            "getLoadedDLLs"                     \
+ [509] "getNamespace"                       "getNamespaceExports"               \
+ [511] "getNamespaceImports"                "getNamespaceInfo"                  \
+ [513] "getNamespaceName"                   "getNamespaceUsers"                 \
+ [515] "getNamespaceVersion"                "getNativeSymbolInfo"               \
+ [517] "getOption"                          "getRversion"                       \
+ [519] "getSrcLines"                        "getTaskCallbackNames"              \
+ [521] "gettext"                            "gettextf"                          \
+ [523] "getwd"                              "gl"                                \
+ [525] "globalenv"                          "gregexpr"                          \
+ [527] "grep"                               "grepl"                             \
+ [529] "grepRaw"                            "grouping"                          \
+ [531] "gsub"                               "gzcon"                             \
+ [533] "gzfile"                             "I"                                 \
+ [535] "iconv"                              "iconvlist"                         \
+ [537] "icuGetCollate"                      "icuSetCollate"                     \
+ [539] "identical"                          "identity"                          \
+ [541] "if"                                 "ifelse"                            \
+ [543] "Im"                                 "importIntoEnv"                     \
+ [545] "inherits"                           "integer"                           \
+ [547] "interaction"                        "interactive"                       \
+ [549] "intersect"                          "intToBits"                         \
+ [551] "intToUtf8"                          "inverse.rle"                       \
+ [553] "invisible"                          "invokeRestart"                     \
+ [555] "invokeRestartInteractively"         "is.array"                          \
+ [557] "is.atomic"                          "is.call"                           \
+ [559] "is.character"                       "is.complex"                        \
+ [561] "is.data.frame"                      "is.double"                         \
+ [563] "is.element"                         "is.environment"                    \
+ [565] "is.expression"                      "is.factor"                         \
+ [567] "is.finite"                          "is.function"                       \
+ [569] "is.infinite"                        "is.integer"                        \
+ [571] "is.language"                        "is.list"                           \
+ [573] "is.loaded"                          "is.logical"                        \
+ [575] "is.matrix"                          "is.na"                             \
+ [577] "is.na.data.frame"                   "is.na.numeric_version"             \
+ [579] "is.na.POSIXlt"                      "is.na<-"                           \
+ [581] "is.na<-.default"                    "is.na<-.factor"                    \
+ [583] "is.na<-.numeric_version"            "is.name"                           \
+ [585] "is.nan"                             "is.null"                           \
+ [587] "is.numeric"                         "is.numeric_version"                \
+ [589] "is.numeric.Date"                    "is.numeric.difftime"               \
+ [591] "is.numeric.POSIXt"                  "is.object"                         \
+ [593] "is.ordered"                         "is.package_version"                \
+ [595] "is.pairlist"                        "is.primitive"                      \
+ [597] "is.qr"                              "is.R"                              \
+ [599] "is.raw"                             "is.recursive"                      \
+ [601] "is.single"                          "is.symbol"                         \
+ [603] "is.table"                           "is.unsorted"                       \
+ [605] "is.vector"                          "isatty"                            \
+ [607] "isBaseNamespace"                    "isdebugged"                        \
+ [609] "isIncomplete"                       "isNamespace"                       \
+ [611] "isNamespaceLoaded"                  "ISOdate"                           \
+ [613] "ISOdatetime"                        "isOpen"                            \
+ [615] "isRestart"                          "isS4"                              \
+ [617] "isSeekable"                         "isSymmetric"                       \
+ [619] "isSymmetric.matrix"                 "isTRUE"                            \
+ [621] "jitter"                             "julian"                            \
+ [623] "julian.Date"                        "julian.POSIXt"                     \
+ [625] "kappa"                              "kappa.default"                     \
+ [627] "kappa.lm"                           "kappa.qr"                          \
+ [629] "kronecker"                          "l10n_info"                         \
+ [631] "La_library"                         "La_version"                        \
+ [633] "La.svd"                             "labels"                            \
+ [635] "labels.default"                     "lapply"                            \
+ [637] "lazyLoad"                           "lazyLoadDBexec"                    \
+ [639] "lazyLoadDBfetch"                    "lbeta"                             \
+ [641] "lchoose"                            "length"                            \
+ [643] "length.POSIXlt"                     "length<-"                          \
+ [645] "length<-.factor"                    "lengths"                           \
+ [647] "letters"                            "LETTERS"                           \
+ [649] "levels"                             "levels.default"                    \
+ [651] "levels<-"                           "levels<-.factor"                   \
+ [653] "lfactorial"                         "lgamma"                            \
+ [655] "libcurlVersion"                     "library"                           \
+ [657] "library.dynam"                      "library.dynam.unload"              \
+ [659] "licence"                            "license"                           \
+ [661] "list"                               "list.dirs"                         \
+ [663] "list.files"                         "list2env"                          \
+ [665] "load"                               "loadedNamespaces"                  \
+ [667] "loadingNamespaceInfo"               "loadNamespace"                     \
+ [669] "local"                              "lockBinding"                       \
+ [671] "lockEnvironment"                    "log"                               \
+ [673] "log10"                              "log1p"                             \
+ [675] "log2"                               "logb"                              \
+ [677] "logical"                            "lower.tri"                         \
+ [679] "ls"                                 "make.names"                        \
+ [681] "make.unique"                        "makeActiveBinding"                 \
+ [683] "Map"                                "mapply"                            \
+ [685] "margin.table"                       "mat.or.vec"                        \
+ [687] "match"                              "match.arg"                         \
+ [689] "match.call"                         "match.fun"                         \
+ [691] "Math.data.frame"                    "Math.Date"                         \
+ [693] "Math.difftime"                      "Math.factor"                       \
+ [695] "Math.POSIXt"                        "matrix"                            \
+ [697] "max"                                "max.col"                           \
+ [699] "mean"                               "mean.Date"                         \
+ [701] "mean.default"                       "mean.difftime"                     \
+ [703] "mean.POSIXct"                       "mean.POSIXlt"                      \
+ [705] "mem.limits"                         "memCompress"                       \
+ [707] "memDecompress"                      "memory.profile"                    \
+ [709] "merge"                              "merge.data.frame"                  \
+ [711] "merge.default"                      "message"                           \
+ [713] "mget"                               "min"                               \
+ [715] "missing"                            "Mod"                               \
+ [717] "mode"                               "mode<-"                            \
+ [719] "month.abb"                          "month.name"                        \
+ [721] "months"                             "months.Date"                       \
+ [723] "months.POSIXt"                      "mostattributes<-"                  \
+ [725] "names"                              "names.POSIXlt"                     \
+ [727] "names<-"                            "names<-.POSIXlt"                   \
+ [729] "namespaceExport"                    "namespaceImport"                   \
+ [731] "namespaceImportClasses"             "namespaceImportFrom"               \
+ [733] "namespaceImportMethods"             "nargs"                             \
+ [735] "nchar"                              "ncol"                              \
+ [737] "NCOL"                               "Negate"                            \
+ [739] "new.env"                            "next"                              \
+ [741] "NextMethod"                         "ngettext"                          \
+ [743] "nlevels"                            "noquote"                           \
+ [745] "norm"                               "normalizePath"                     \
+ [747] "nrow"                               "NROW"                              \
+ [749] "numeric"                            "numeric_version"                   \
+ [751] "nzchar"                             "objects"                           \
+ [753] "oldClass"                           "oldClass<-"                        \
+ [755] "OlsonNames"                         "on.exit"                           \
+ [757] "open"                               "open.connection"                   \
+ [759] "open.srcfile"                       "open.srcfilealias"                 \
+ [761] "open.srcfilecopy"                   "Ops.data.frame"                    \
+ [763] "Ops.Date"                           "Ops.difftime"                      \
+ [765] "Ops.factor"                         "Ops.numeric_version"               \
+ [767] "Ops.ordered"                        "Ops.POSIXt"                        \
+ [769] "options"                            "order"                             \
+ [771] "ordered"                            "outer"                             \
+ [773] "package_version"                    "packageEvent"                      \
+ [775] "packageHasNamespace"                "packageStartupMessage"             \
+ [777] "packBits"                           "pairlist"                          \
+ [779] "parent.env"                         "parent.env<-"                      \
+ [781] "parent.frame"                       "parse"                             \
+ [783] "parseNamespaceFile"                 "paste"                             \
+ [785] "paste0"                             "path.expand"                       \
+ [787] "path.package"                       "pcre_config"                       \
+ [789] "pi"                                 "pipe"                              \
+ [791] "pmatch"                             "pmax"                              \
+ [793] "pmax.int"                           "pmin"                              \
+ [795] "pmin.int"                           "polyroot"                          \
+ [797] "pos.to.env"                         "Position"                          \
+ [799] "pretty"                             "pretty.default"                    \
+ [801] "prettyNum"                          "print"                             \
+ [803] "print.AsIs"                         "print.by"                          \
+ [805] "print.condition"                    "print.connection"                  \
+ [807] "print.data.frame"                   "print.Date"                        \
+ [809] "print.default"                      "print.difftime"                    \
+ [811] "print.Dlist"                        "print.DLLInfo"                     \
+ [813] "print.DLLInfoList"                  "print.DLLRegisteredRoutines"       \
+ [815] "print.eigen"                        "print.factor"                      \
+ [817] "print.function"                     "print.hexmode"                     \
+ [819] "print.libraryIQR"                   "print.listof"                      \
+ [821] "print.NativeRoutineList"            "print.noquote"                     \
+ [823] "print.numeric_version"              "print.octmode"                     \
+ [825] "print.packageInfo"                  "print.POSIXct"                     \
+ [827] "print.POSIXlt"                      "print.proc_time"                   \
+ [829] "print.restart"                      "print.rle"                         \
+ [831] "print.simple.list"                  "print.srcfile"                     \
+ [833] "print.srcref"                       "print.summary.table"               \
+ [835] "print.summaryDefault"               "print.table"                       \
+ [837] "print.warnings"                     "prmatrix"                          \
+ [839] "proc.time"                          "prod"                              \
+ [841] "prop.table"                         "provideDimnames"                   \
+ [843] "psigamma"                           "pushBack"                          \
+ [845] "pushBackLength"                     "q"                                 \
+ [847] "qr"                                 "qr.coef"                           \
+ [849] "qr.default"                         "qr.fitted"                         \
+ [851] "qr.Q"                               "qr.qty"                            \
+ [853] "qr.qy"                              "qr.R"                              \
+ [855] "qr.resid"                           "qr.solve"                          \
+ [857] "qr.X"                               "quarters"                          \
+ [859] "quarters.Date"                      "quarters.POSIXt"                   \
+ [861] "quit"                               "quote"                             \
+ [863] "R_system_version"                   "R.home"                            \
+ [865] "R.version"                          "R.Version"                         \
+ [867] "R.version.string"                   "range"                             \
+ [869] "range.default"                      "rank"                              \
+ [871] "rapply"                             "raw"                               \
+ [873] "rawConnection"                      "rawConnectionValue"                \
+ [875] "rawShift"                           "rawToBits"                         \
+ [877] "rawToChar"                          "rbind"                             \
+ [879] "rbind.data.frame"                   "rcond"                             \
+ [881] "Re"                                 "read.dcf"                          \
+ [883] "readBin"                            "readChar"                          \
+ [885] "readline"                           "readLines"                         \
+ [887] "readRDS"                            "readRenviron"                      \
+ [889] "Recall"                             "Reduce"                            \
+ [891] "reg.finalizer"                      "regexec"                           \
+ [893] "regexpr"                            "registerS3method"                  \
+ [895] "registerS3methods"                  "regmatches"                        \
+ [897] "regmatches<-"                       "remove"                            \
+ [899] "removeTaskCallback"                 "rep"                               \
+ [901] "rep_len"                            "rep.Date"                          \
+ [903] "rep.factor"                         "rep.int"                           \
+ [905] "rep.numeric_version"                "rep.POSIXct"                       \
+ [907] "rep.POSIXlt"                        "repeat"                            \
+ [909] "replace"                            "replicate"                         \
+ [911] "require"                            "requireNamespace"                  \
+ [913] "restartDescription"                 "restartFormals"                    \
+ [915] "retracemem"                         "return"                            \
+ [917] "returnValue"                        "rev"                               \
+ [919] "rev.default"                        "rle"                               \
+ [921] "rm"                                 "RNGkind"                           \
+ [923] "RNGversion"                         "round"                             \
+ [925] "round.Date"                         "round.POSIXt"                      \
+ [927] "row"                                "row.names"                         \
+ [929] "row.names.data.frame"               "row.names.default"                 \
+ [931] "row.names<-"                        "row.names<-.data.frame"            \
+ [933] "row.names<-.default"                "rowMeans"                          \
+ [935] "rownames"                           "rownames<-"                        \
+ [937] "rowsum"                             "rowsum.data.frame"                 \
+ [939] "rowsum.default"                     "rowSums"                           \
+ [941] "sample"                             "sample.int"                        \
+ [943] "sapply"                             "save"                              \
+ [945] "save.image"                         "saveRDS"                           \
+ [947] "scale"                              "scale.default"                     \
+ [949] "scan"                               "search"                            \
+ [951] "searchpaths"                        "seek"                              \
+ [953] "seek.connection"                    "seq"                               \
+ [955] "seq_along"                          "seq_len"                           \
+ [957] "seq.Date"                           "seq.default"                       \
+ [959] "seq.int"                            "seq.POSIXt"                        \
+ [961] "sequence"                           "serialize"                         \
+ [963] "set.seed"                           "setdiff"                           \
+ [965] "setequal"                           "setHook"                           \
+ [967] "setNamespaceInfo"                   "setSessionTimeLimit"               \
+ [969] "setTimeLimit"                       "setwd"                             \
+ [971] "showConnections"                    "shQuote"                           \
+ [973] "sign"                               "signalCondition"                   \
+ [975] "signif"                             "simpleCondition"                   \
+ [977] "simpleError"                        "simpleMessage"                     \
+ [979] "simpleWarning"                      "simplify2array"                    \
+ [981] "sin"                                "single"                            \
+ [983] "sinh"                               "sink"                              \
+ [985] "sink.number"                        "sinpi"                             \
+ [987] "slice.index"                        "socketConnection"                  \
+ [989] "socketSelect"                       "solve"                             \
+ [991] "solve.default"                      "solve.qr"                          \
+ [993] "sort"                               "sort.default"                      \
+ [995] "sort.int"                           "sort.list"                         \
+ [997] "sort.POSIXlt"                       "source"                            \
+ [999] "split"                              "split.data.frame"                  \
+ [ reached getOption("max.print") -- omitted 217 entries ]\
+> vecobj <- c(1,10,100)\
+> vecobj\
+[1]   1  10 100\
+> class(vecobj)\
+[1] "numeric"\
+> vecobj+10\
+[1]  11  20 110\
+> vecobj+vecobj\
+[1]   2  20 200\
+> c(1,2,3,4,5,6)+c(100,200)\
+[1] 101 202 103 204 105 206\
+> 1:84\
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28\
+[29] 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56\
+[57] 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84\
+> numericVec <-1:10\
+> logicalVec <- (numericVec >= 5)\
+> logicalVec\
+ [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE\
+> class(logicalVec)\
+[1] "logical"\
+> logicalVec1 <- c(FALSE,FALSE,TRUE,TRUE)\
+> logicalVec2 <- c(FALSE,TRUE,FALSE,TRUE)\
+> logicalVec1 | logicalVec2\
+[1] FALSE  TRUE  TRUE  TRUE\
+> logicalVec1 & logicalVec2\
+[1] FALSE FALSE FALSE  TRUE\
+> !logicalVec1\
+[1]  TRUE  TRUE FALSE FALSE\
+> logicalVec1+logicalVec2\
+[1] 0 1 1 2\
+> logicalVec1+1\
+[1] 1 1 2 2\
+> class(logicalVec1+1)\
+[1] "numeric"\
+> vectorObj <- 101:132\
+> vectorObj[20]\
+[1] 120\
+> vectorObj[17]\
+[1] 117\
+> vectorObj[17] <- -2\
+> vectorObj[17]\
+[1] -2\
+> vectorObj\
+ [1] 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116  -2 118 119 120 121\
+[22] 122 123 124 125 126 127 128 129 130 131 132\
+> vectorObj[c(6,17,20,30)]\
+[1] 106  -2 120 130\
+> vectorObj[5:10]\
+[1] 105 106 107 108 109 110\
+> vectorObj[c:(20,20,20)]\
+Error: unexpected ',' in "vectorObj[c:(20,"\
+> vectorObj[c(20,20,20)]\
+[1] 120 120 120\
+> vectorObj[length(vectorObj) :1]\
+ [1] 132 131 130 129 128 127 126 125 124 123 122 121 120 119 118  -2 116 115 114 113 112\
+[22] 111 110 109 108 107 106 105 104 103 102 101\
+> vectorObj[1:10] = 1\
+> vectorObj\
+ [1]   1   1   1   1   1   1   1   1   1   1 111 112 113 114 115 116  -2 118 119 120 121\
+[22] 122 123 124 125 126 127 128 129 130 131 132\
+> vectorObj <- 101:132\
+> vectorObj[-1]\
+ [1] 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122\
+[22] 123 124 125 126 127 128 129 130 131 132\
+> vectorObj[-c(1,length(vectorObj))]\
+ [1] 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122\
+[22] 123 124 125 126 127 128 129 130 131\
+> vectorObj <- 1:8\
+> vectorObj[c(TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE)]\
+[1] 1 2 6 7\
+> logicalIndex <- vectorObj >5\
+> logicalIndex\
+[1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE\
+> newVectorObj <- vectorObj[logicalIndex]\
+> newVectorObj\
+[1] 6 7 8\
+> vectorObj <- 1:100\
+> vecotrObj[vectorObj <= 25] <- 25\
+Error in vecotrObj[vectorObj <= 25] <- 25 : object 'vecotrObj' not found\
+> vectorObj[vectorObj <= 25] <- 25\
+> vectorObj[vectorObj >= 75] <- 75\
+> vectorObj\
+  [1] 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 26 27 28\
+ [29] 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56\
+ [57] 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 75 75 75 75 75 75 75 75 75\
+ [85] 75 75 75 75 75 75 75 75 75 75 75 75 75 75 75 75\
+> stringVec <- c("pear", "apple", "pineapple")\
+> class(stringVec)\
+[1] "character"\
+> stringVec\
+[1] "pear"      "apple"     "pineapple"\
+> paste(stringVec, "juice" sep=" ")\
+Error: unexpected symbol in "paste(stringVec, "juice" sep"\
+> paste(stringVec, "juice", sep=" ")\
+[1] "pear juice"      "apple juice"     "pineapple juice"\
+> substr(stringVec, start=2, stop=4)\
+[1] "ear" "ppl" "ine"\
+> nchar(stringVec)\
+[1] 4 5 9\
+> substr(stringVec, 3, nchar(stringVec))\
+[1] "ar"      "ple"     "neapple"\
+> index <- grep(pattern="apple", x=stringVec)\
+> index\
+[1] 2 3\
+> stringVec\
+[1] "pear"      "apple"     "pineapple"\
+> stringVec[index]\
+[1] "apple"     "pineapple"\
+> "1" + 1\
+Error in "1" + 1 : non-numeric argument to binary operator\
+> paste(4:12, "th", sep=" ")\
+[1] "4 th"  "5 th"  "6 th"  "7 th"  "8 th"  "9 th"  "10 th" "11 th" "12 th"\
+> as.numeric("1") +1\
+[1] 2\
+> mat <- matrix(data=1:12, nrow=3, ncol=4, byrow=FALSE)\
+> mat\
+     [,1] [,2] [,3] [,4]\
+[1,]    1    4    7   10\
+[2,]    2    5    8   11\
+[3,]    3    6    9   12\
+> class(mat)\
+[1] "matrix"\
+> mat <- matrix(data=1:12, nrow=3, ncol=4, byrow=TRUE)\
+> mat\
+     [,1] [,2] [,3] [,4]\
+[1,]    1    2    3    4\
+[2,]    5    6    7    8\
+[3,]    9   10   11   12\
+> mat[2,3]\
+[1] 7\
+> class(mat[2,3])\
+[1] "integer"\
+> mat[1:2, 1:2]\
+     [,1] [,2]\
+[1,]    1    2\
+[2,]    5    6\
+> class(mat[1:2, 1:2])\
+[1] "matrix"\
+> mat[,2:3]\
+     [,1] [,2]\
+[1,]    2    3\
+[2,]    6    7\
+[3,]   10   11\
+> class(mat[1,])\
+[1] "integer"\
+> class(mat[1,,drop=FALSE])\
+[1] "matrix"\
+> matCol <- matrix(data=1:12, nrow=3, ncol=4, byrow = FALSE)\
+> matCol +1\
+     [,1] [,2] [,3] [,4]\
+[1,]    2    5    8   11\
+[2,]    3    6    9   12\
+[3,]    4    7   10   13\
+> mat + matCol\
+     [,1] [,2] [,3] [,4]\
+[1,]    2    6   10   14\
+[2,]    7   11   15   19\
+[3,]   12   16   20   24\
+> mat + matCol[,2:3]\
+Error in mat + matCol[, 2:3] : non-conformable arrays\
+> df <- data.frame(a = 1:5, b = 21:25, c = 1:5 + 0.5)\
+> df\
+  a  b   c\
+1 1 21 1.5\
+2 2 22 2.5\
+3 3 23 3.5\
+4 4 24 4.5\
+5 5 25 5.5\
+> class(df)\
+[1] "data.frame"\
+> dim(df)\
+[1] 5 3\
+> colnames(df)\
+[1] "a" "b" "c"\
+> rownames(df)\
+[1] "1" "2" "3" "4" "5"\
+> colnames(df)[2] <- "newName"\
+> df\
+  a newName   c\
+1 1      21 1.5\
+2 2      22 2.5\
+3 3      23 3.5\
+4 4      24 4.5\
+5 5      25 5.5\
+> df$newName\
+[1] 21 22 23 24 25\
+> class($newname)\
+Error: unexpected '$' in "class($"\
+> class(df$newname)\
+[1] "NULL"\
+> class(df$newName)\
+[1] "integer"\
+> df$newColumn <- 5:1\
+> df\
+  a newName   c newColumn\
+1 1      21 1.5         5\
+2 2      22 2.5         4\
+3 3      23 3.5         3\
+4 4      24 4.5         2\
+5 5      25 5.5         1\
+> getwd\
+function () \
+.Internal(getwd())\
+<bytecode: 0x105671b10>\
+<environment: namespace:base>\
+> getwd()\
+[1] "/Users/nathanbunch"\
+> setwd("/Users/nathanbunch/Data Science/ch01_02/data/ch02")\
+> dir()\
+[1] "fruitData.csv"      "fruitDataJuice.csv" "fruitDataJuice.rds" "fruitNutrition.csv"\
+> fruitData <- read.csv(file="fruitData.csv", as.is="TRUE")\
+Warning message:\
+In read.table(file = file, header = header, sep = sep, quote = quote,  :\
+  not all columns named in 'as.is' exist\
+> fruitData <- read.csv(file="fruitData.csv", as.is=TRUE)\
+> fruitData\
+   Fruit  Color  Shape Juice\
+1  apple    red  round   1.0\
+2 banana yellow oblong   0.0\
+3   pear  green   pear   0.5\
+4 orange orange  round   1.0\
+5   kiwi  green  round   0.0\
+> class(fruitData)\
+[1] "data.frame"\
+> class(fruitData$Juice)\
+[1] "numeric"\
+> write.csv(x=fruitData$Juice,file="fruitDataJuice.csv")\
+> fruitDataJuice <- read.csv(file="fruitDataJuice.csv")\
+> class(fruitDataJuice)\
+[1] "data.frame"\
+> saveRDS(object=fruitData$Juice, file="fruitDataJuice.rds")\
+> fruitDataJuice <- readRDS(file="fruitDataJuice.rds")\
+> class(fruitDataJuice)\
+[1] "numeric"\
+> fruitDataJuice\
+[1] 1.0 0.0 0.5 1.0 0.0\
+> index <- (fruitData$Color == "red" | fruitData$Color == "green")\
+> index\
+[1]  TRUE FALSE  TRUE FALSE  TRUE\
+> fruitData[index,]\
+  Fruit Color Shape Juice\
+1 apple   red round   1.0\
+3  pear green  pear   0.5\
+5  kiwi green round   0.0\
+> fruitData$Color %int% c("red", "green")\
+Error in fruitData$Color %int% c("red", "green") : \
+  could not find function "%int%"\
+> fruitData$Color %in% c("red", "green")\
+[1]  TRUE FALSE  TRUE FALSE  TRUE\
+> fruitData[fruitData$Color %in% fruitData$Fruit,]\
+   Fruit  Color Shape Juice\
+4 orange orange round     1\
+> index <- order(fruitData$Juice,decreasing = TRUE)\
+> index\
+[1] 1 4 3 2 5\
+> fruitData[index,]\
+   Fruit  Color  Shape Juice\
+1  apple    red  round   1.0\
+4 orange orange  round   1.0\
+3   pear  green   pear   0.5\
+2 banana yellow oblong   0.0\
+5   kiwi  green  round   0.0\
+> fruitNutr <- read.csv("fruitNutrition.csv", as.is="TRUE")\
+Warning message:\
+In read.table(file = file, header = header, sep = sep, quote = quote,  :\
+  not all columns named in 'as.is' exist\
+> fruitNutr <- read.csv("fruitNutrition.csv", as.is=TRUE)\
+> fruitNutr\
+   Fruit Calories\
+1 banana      100\
+2   pear      100\
+3  mango      200\
+> index <- match(x=fruitData$Fruit, table = fruitNutr$Fruit)\
+> index\
+[1] NA  1  2 NA NA\
+> is.na(index)\
+[1]  TRUE FALSE FALSE  TRUE  TRUE\
+> fruitData$Calories <- NA\
+> fruitData$Calories[!is.na(index)] <- fruitNutr$Calories[index[!is.na(index)]]\
+> fruitData\
+   Fruit  Color  Shape Juice Calories\
+1  apple    red  round   1.0       NA\
+2 banana yellow oblong   0.0      100\
+3   pear  green   pear   0.5      100\
+4 orange orange  round   1.0       NA\
+5   kiwi  green  round   0.0       NA\
+> }
